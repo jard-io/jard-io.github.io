@@ -1,0 +1,324 @@
+@import url('https://rsms.me/inter/inter.css');
+
+
+
+/** 
+Portion of styles for this page were modified from Danny Garcia's personal website:
+https://danny-garcia.com/
+
+His genius in frontend development served as basis and inspiration for my learnings.
+Check his personal site out -- there's a lot of wizardry going on!
+**/
+
+* {
+  box-sizing: border-box;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  opacity: 1;
+  animation: fade-in 5s ease 0.5s forwards;
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 255, 255); 
+  z-index: 2;
+  pointer-events: none;
+}
+
+:root {
+  --c-primary: aliceblue;
+  --c-secondary: rgb(167, 185, 190);
+  --c-tertiary: rgba(0, 0, 0, 0.888);
+  --v-space: 6rem;
+  --canvas-height: 80vh;
+  --f-weight: 600;
+  --border-radius: min(10vw, var(--v-space));
+}
+
+html,
+body,
+#root,
+.container {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--c-secondary);
+  touch-action: none;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-secondary);
+  box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-rows: 1fr 3fr auto;
+  z-index: 5;
+  grid-template-areas:
+  ". header header ."
+  ". intro . ."
+  ". experience . ."
+  ". timeline timeline ."
+  ". project . ."
+  ". project-timeline project-timeline ."
+  "footer footer footer footer";
+}
+
+body {
+  background: #f0f0f0;
+  color: black;
+  font-family: 'Inter';
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.hero {
+  margin: var(--v-space) 0 0 0;
+  opacity: 100;
+  will-change: opacity;
+  grid-area: header;
+  align-self: end;
+}
+
+.hero a {
+  color:black;
+  font-family: 'Inter', 'Helvetica', sans-serif;
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -0.25rem;
+  text-decoration: none;
+
+}
+
+
+.intro {
+  transform: translateZ(0px);
+  background-color: black;
+  border-radius: 3.5rem;
+  padding: 2rem;
+  mix-blend-mode: multiply;
+  opacity: 100;
+  will-change: opacity;
+  margin: var(--v-space) 0;
+  grid-area: intro;
+  align-self: end;
+}
+
+.type-primary {
+  font-weight: var(--f-weight);
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.experience {
+  grid-area: experience;
+  gap: 1em;
+}
+
+h2.header span{
+  border-radius: var(--border-radius);
+  color: black;
+  font-size: 4rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: var(--v-space) 0 0;
+  padding: 1.5rem;
+}
+
+a {
+  color: var(--c-primary);
+  font-weight: var(--f-weight);
+  text-decoration-thickness: .19rem;
+}
+a:hover {
+  text-decoration: none;
+}
+
+.timeline {
+  grid-area: timeline;
+}
+
+.timeline-entry {
+  z-index: 1;
+  background: var(--c-tertiary);
+  backdrop-filter: saturate(180%) blur(40px);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+  
+  mix-blend-mode: normal;
+  position: relative;
+  padding: calc(var(--v-space)/2) 0;
+  
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  ". co description .";
+}
+
+.timeline-entry:first-child {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.timeline-entry:last-child {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+.timeline-co {
+  margin: calc(var(--v-space) * .5) 0 0;
+  grid-area: co;
+
+}
+
+.timeline-co a {
+  color: var(--c-primary);
+
+}
+
+.timeline-time {
+  display: block;
+}
+
+.timeline-description {
+  margin: calc(var(--v-space) * .5) 0 0;
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  grid-area: description;
+}
+
+.projects {
+  grid-area: project;
+}
+
+.project-timeline {
+  grid-area: project-timeline;
+}
+
+footer {
+  grid-area: footer;
+  
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+  ". p p ."
+}
+
+footer .footer-content {
+  z-index: 1;
+  padding: var(--v-space) 0;
+  font-weight: var(--f-weight);
+  font-size: 1.5rem;
+  line-height: 1.4;
+  grid-area: p;
+  color: black;
+}
+
+div.footer-content a{
+  color: black;
+}
+
+@media only screen and (max-width: 834px) {
+    :root {
+        --v-space: 4rem;
+    }
+    html {
+        font-size: 14px;
+    }
+    main {
+        grid-template-columns: 1fr 8fr 2fr 1fr;
+    }
+    .cursor {
+      visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    :root {
+        --v-space: 3rem;
+    }
+    html {
+        font-size: 12px;
+    }
+    main {
+        grid-template-columns: 1fr 10fr 0fr 1fr;
+    }
+    .logo a{
+      line-height: 1.1;
+    }
+    .timeline-entry {
+        grid-template-columns: 1fr 5fr 5fr 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+        ". hr hr ."
+        ". co co ."
+        ". description description .";
+    }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.Canvas {
+  touch-action: none;
+}
+
+/* .cursor {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--c-primary);
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: .05s;
+  z-index: 5;
+}
+
+.intro:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  
+}
+
+.logo:hover ~ .cursor{
+  transform: translate(-50%, -50%) scale(1.5);
+  
+} */
+        
