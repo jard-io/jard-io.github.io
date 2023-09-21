@@ -119,7 +119,7 @@ function Overlay() {
                 Email
               </a>!
               &nbsp;
-              View my full resume <a href='https://drive.google.com/file/d/1Z6zsJ058WZBqS7QAht5B2qG1Vn2bjSKP/view?usp=sharing'>here</a>.
+              View my full resume <a href='https://drive.google.com/drive/folders/1Azj95icXViTLsFiu-Y4Hrn97VdurCtHZ?usp=sharing'>here</a>.
             </p>
           </div>
         </footer>
