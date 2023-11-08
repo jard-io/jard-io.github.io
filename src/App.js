@@ -207,6 +207,7 @@ function Plane() {
     </mesh>
   );
 }
+
 // Main component for the app
 export default function App() {
 
