@@ -89,6 +89,12 @@ h1 {
   font-weight: bold;
 }
 
+
+.Canvas {
+  touch-action: none;
+}
+
+
 .hero {
   margin: var(--v-space) 0 0 0;
   opacity: 100;
@@ -293,8 +299,16 @@ div.footer-content a{
   }
 }
 
-.Canvas {
-  touch-action: none;
+::-webkit-scrollbar{
+  background-color: darkgray;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: whitesmoke;
+  border-radius: 8px;
+  
+
 }
 
 /* .cursor {
