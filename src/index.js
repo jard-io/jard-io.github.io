@@ -19,6 +19,16 @@ function Overlay() {
         </h2>
 
         <section className='timeline'>
+        <article className='timeline-entry'>
+            <h2 className='timeline-co type-primary'>
+              <a href="https://perpetua.io/">Perpetua</a>
+              <span className="timeline-time">Jan 2024 - Present</span>
+            </h2>
+            <div className='timeline-description'>
+              <p>Helping build Perpetua's web app!
+              </p>
+            </div>
+          </article>
           <article className='timeline-entry'>
             <h2 className='timeline-co type-primary'>
               <a href="https://www.rbc.com/about-rbc.html">RBC</a>
